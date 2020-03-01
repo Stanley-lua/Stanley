@@ -16,8 +16,10 @@ require:
 entry:
   type: file
   path: path/to/file.lua # this file will be executed
+  relative: True # this is default if such key's not specified, means search under lib/Wolf2789/custom_package/path/to/file.lua
 
 entry:
   type: global
   name: Some_global_variable
   path: path/to/file.lua # returned contents from this file will be stored as Some_global_variable
+  relative: False # if False, then search inside lib/path/to/file.lua
