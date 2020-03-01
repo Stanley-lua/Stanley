@@ -9,11 +9,11 @@ Git-based local directory package manager for Lua.
 * __python 3__ with following libraries:
   * __os__ (built-in) for file/directory based operations and executing ```os.system('git clone ...')```
   * __shutil__ (built-in) for executable discovery using ```shutil.which()```
-  * __argparse__ for CLI parameters parsing
+  * __argparse__ (built-in) for CLI parameters parsing
   * __yaml__ for configuration file parsing
-  * __re__ for regex-based operations
-  * __base64__ for ```base64.b64decode()```
-  * __datetime__ for ```datetime.now().strftime()```
+  * __re__ (built-in) for regex-based operations
+  * __base64__ (built-in) for ```base64.b64decode()```
+  * __datetime__ (built-in) for ```datetime.now().strftime()```
   
 ## Installation
 1. Download [stanley](./stanley) to project directory.
