@@ -1,0 +1,13 @@
+name: lume
+description: A collection of functions for Lua, geared towards game development.
+version: 1.0
+url: https://github.com/rxi/lume/
+
+require:
+  - name: rxi/lume
+
+entry:
+  type: global
+  name: Utils
+  path: rxi/lume/lume.lua
+  relative: False

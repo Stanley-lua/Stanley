@@ -1,0 +1,7 @@
+name: hump
+description: Helper Utilities for Massive Progression - small collection of tools for developing games with LÖVE
+version: 1.0
+url: https://github.com/vrld/hump
+
+require:
+  - name: vrld/hump

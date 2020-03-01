@@ -1,0 +1,15 @@
+name: Wolf2789/Example_project
+desc: Project description
+
+author:
+  email: wolf2789@gmail.com
+  name: Dawid Bugajski
+
+default:
+  source: https://github.com
+
+require:
+- name: _CUSTOM_PACKAGE_/hump
+  source: local
+- name: _CUSTOM_PACKAGE_/lume
+  source: local
