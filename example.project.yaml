@@ -1,0 +1,16 @@
+name: Wolf2789/Project_name
+desc: Project description
+
+author:
+  email: wolf2789@gmail.com
+  name: Dawid Bugajski
+
+default:
+  source: https://github.com
+
+require:
+- name: Wolf2789/__file__
+  source: local # expects Wolf2789/__file__ to be present under ./lib directory
+- name: vrld/hump # clones https://github.com/vrld/hump (default + name)
+- name: other_source
+  source: https://domain.com/git_source.git # clones from this source, instead of default + name

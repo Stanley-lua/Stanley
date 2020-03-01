@@ -1,0 +1,23 @@
+name: Wolf2789/custom_package
+description: Custom package description
+version: 1.0
+
+author:
+  name: Dawid Bugajski
+  email: wolf2789@gmail.com
+
+require:
+  - name: some/repo
+  - name: some/repo2
+    source: https://github.com/some/repo2
+  - name: local_repo
+    source: local
+
+entry:
+  type: file
+  path: path/to/file.lua # this file will be executed
+
+entry:
+  type: global
+  name: Some_global_variable
+  path: path/to/file.lua # returned contents from this file will be stored as Some_global_variable
