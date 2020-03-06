@@ -246,7 +246,11 @@ class Manager:
 
                 Manager.currentPath = './lib/' + name
                 log('Cloning \'' + name + '\' (' + source + ') -> ' + Manager.currentPath)
-                os.system('git clone ' + source + ' ' + Manager.currentPath)
+                if os.path.exists(Manager.currentPath):
+                    log('Directory already exists, pull changes...')
+                    os.system('cd ' + Manager.currentPath + '; git pull')
+                else:
+                    os.system('git clone ' + source + ' ' + Manager.currentPath)
 
     @staticmethod
     def dump():
