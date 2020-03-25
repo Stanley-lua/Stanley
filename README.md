@@ -44,6 +44,11 @@ Git-based local directory package manager for Lua.
 5. ```./stanley remove package_name -s local```
 6. ```./stanley require repo/package_name [-s full_source_path_if_other_than_github]```
 
+## Additional features
+Generated "autoload.lua" file contains special function, that allows requiring files from directories that contains dot (.) in it's name.
+
+How? Each literal dot should be escaped with ``` ` ``` character, for example ```require('path.to`.file.containing`.dots')``` points to ```path/to.file/containing.dots```.
+
 ## TODO
 * Fix bugs if any
 * Add usage examples
