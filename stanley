@@ -110,7 +110,7 @@ class Manager:
     @staticmethod
     def init():
         ensureDirExists('./lib')
-        Manager.config = loadYaml('project.yaml')
+        Manager.config = loadYaml('package.yaml')
 
     @staticmethod
     def getItemFromUrl(url):

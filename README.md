@@ -17,7 +17,7 @@ Git-based local directory package manager for Lua.
   
 ## Installation
 1. Download [stanley](./stanley) to project directory.
-2. Create ```project.yaml``` file inside project's root. Example file structure: [example.project.yaml](./example.project.yaml)
+2. Create ```package.yaml``` file inside project's root. Example file structure: [example.package.yaml](./example.package.yaml)
 
 ## Usage
 >
