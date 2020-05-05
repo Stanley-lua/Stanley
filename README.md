@@ -9,11 +9,11 @@ Self-contained git-based local directory package manager for Lua.
 * __Lua__ at least 5.2.4
 
 ## Per project installation
-1. Download [stanley](https://stanley-release-url) to project directory.
+1. Download [stanley](https://github.com/Stanley-lua/Stanley/releases/download/1.1/stanley) to project directory.
 2. Issue ```./stanley init``` command.
 
 ## Global installation
-1. Put [stanley](./stanley) under one of the directories from $PATH variable.
+1. Put [stanley](https://github.com/Stanley-lua/Stanley/releases/download/1.1/stanley) under one of the directories from $PATH variable.
 > If working directory is not automatically detected, then please consider using [first option](#per-project-installation)
 
 # Usage
@@ -48,17 +48,17 @@ Self-contained git-based local directory package manager for Lua.
 
 ## Example usage scenarios
 ```bash
-$ ./stanley init
-$ ./stanley require user/example_repo
+$ stanley init
+$ stanley require user/example_repo
 # require repo with the same name from another hosting source
-$ ./stanley require user/example_repo --source https://another_hosting.io/
-$ ./stanley update
-$ ./stanley dump
+$ stanley require user/example_repo --source https://another_hosting.io/
+$ stanley update
+$ stanley dump
 ```
 
 ```bash
 $ cp /some/example/package.yaml ./package.yaml
-$ ./stanley install # alias for: ./stanley update && ./stanley dump
+$ stanley install # alias for: stanley update && stanley dump
 ```
 
 ### package.yaml structure explanation [here](./docs/package.yaml.md).
@@ -71,9 +71,10 @@ Generated __autoload.lua__ file contains additional functionalities. More about 
 ## Requirements
 * __GNU Make__
 * __Lua__ at least 5.2.4
+* [lexe](https://github.com/Stanley-lua/lexe/)
 
 ```bash
-$ git clone https://github.com/Wolf2789/Stanley.git
+$ git clone https://github.com/Stanley-lua/Stanley.git
 $ make
 ```
 
@@ -81,4 +82,3 @@ $ make
 * Fix bugs if any
 * Resolve recurrent package dependencies.
 * Add functionality for currently unused fields.
-
