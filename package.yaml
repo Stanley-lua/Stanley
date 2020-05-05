@@ -1,4 +1,4 @@
-name: Wolf2789/Stanley
+name: Stanley-lua/Stanley
 description: Package manager for Lua.
 version: 1.1
 author: 
@@ -9,12 +9,12 @@ autoload:
     name: Stanley
     path: src/Stanley.lua
 require:
-  - name: Wolf2789/CLI
-  - name: Wolf2789/counter
-  - name: Wolf2789/Debug
-  - name: Wolf2789/File
-  - name: Wolf2789/opairs
-  - name: Wolf2789/oscapture
-  - name: Wolf2789/spairs
-  - name: Wolf2789/switch
-  - name: Wolf2789/YAML
+  - name: Stanley-lua/CLI
+  - name: Stanley-lua/counter
+  - name: Stanley-lua/Debug
+  - name: Stanley-lua/File
+  - name: Stanley-lua/opairs
+  - name: Stanley-lua/oscapture
+  - name: Stanley-lua/spairs
+  - name: Stanley-lua/switch
+  - name: Stanley-lua/YAML
