@@ -12,7 +12,7 @@ clean:
 	lexe -b $(BUILD_DIR) clean
 
 install: all
-	cp $(BUILD_DIR)/$(OUTPUT) ~/.local/bin/$(OUTPUT)
+	cp -f $(BUILD_DIR)/$(OUTPUT) ~/.local/bin/$(OUTPUT)
 
 uninstall: clean
 	rm ~/.local/bin/$(OUTPUT)

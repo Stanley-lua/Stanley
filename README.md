@@ -20,20 +20,31 @@ Self-contained git-based local directory package manager for Lua.
     Usage: stanley [options] command [repo]
 
     Available commands:
-        dump            Generate ./lib/autoload.lua file.
-        help            Show this message.
-        init            Create package.yaml in current working directory.
-        install         Alias for: stanley update && stanley dump
-        remove          Remove package from required list.
-        require         Add package to required list.
-        update          Clone or pull all required packages from remote sources.
 
-    Optional arguments:
-        --source  [string]      Set source for newly required package.
-                                Appended to every repository that does not have source specified.
-        --verbose [number]      Enable verbose mode (print debug messages).
-                                The higher the value, the deeper you dig.
-        --version [boolean]     Print current version and exit.
+        dump        Generate ./lib/autoload.lua file.
+        help        Show this message.
+        init        Create package.yaml in current working directory.
+        install     Alias for: stanley update && stanley dump
+        remove      Remove package from required list.
+        require     Add package to required list.
+        update      Clone or pull all required packages from remote sources.
+
+    Available options:
+
+        --source, -s    Set source for newly required package.
+                        Appended to every repository that does not have source specified.
+                        type: string        default: https://github.com/
+
+        --target, -t    Set target directory for newly required package.
+                        Git clone will download files there.
+                        type: string        default: 
+
+        --verbose, -v   Enable verbose mode (print debug messages).
+                        The higher the value, the deeper you dig.
+                        type: number        default: 0
+
+        --version       Print current version and exit.
+                        type: boolean       default: false
 
 ## Example usage scenarios
 ```bash
