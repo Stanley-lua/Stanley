@@ -1,54 +1,73 @@
 # Stanley
-Git-based local directory package manager for Lua.
+Self-contained git-based local directory package manager for Lua.
+
+# Installation
 
 ## Requirements
 * __*nix__ system
-
 * __git__ discoverable with ```which git``` command
+* __Lua__ at least 5.2.4
 
-* __python 3__ with following libraries:
-  * __os__ (built-in) for file/directory based operations and executing ```os.system('git clone ...')```
-  * __shutil__ (built-in) for executable discovery using ```shutil.which()```
-  * __argparse__ (built-in) for CLI parameters parsing
-  * __yaml__ for configuration file parsing
-  * __re__ (built-in) for regex-based operations
-  * __base64__ (built-in) for ```base64.b64decode()```
-  * __datetime__ (built-in) for ```datetime.now().strftime()```
-  
-## Installation
-1. Download [stanley](./stanley) to project directory.
-2. Create ```package.yaml``` file inside project's root. Example file structure: [example.package.yaml](./example.package.yaml)
+## Per project installation
+1. Download [stanley](https://stanley-release-url) to project directory.
+2. Issue ```./stanley init``` command.
 
-## Usage
->
-    stanley [-h] [-v] [-n NAME] [-s SOURCE_HOST] command [source]
+## Global installation
+1. Put [stanley](./stanley) under one of the directories from $PATH variable.
+> If working directory is not automatically detected, then please consider using [first option](#per-project-installation)
 
-    command, can be either:
-        require - add [source] to required
-        remove  - remove [source] from required
-        update  - clone from remote sources
-        dump    - generate autoload file
+# Usage
+    Usage: stanley [options] command [repo]
 
-    optional arguments:
-    -h, --help            show help message and exit
-    -v, --verbosity       Increase output verbosity (e.g. -vv is more than -v)
-    -n NAME, --name NAME  Set name for newly required package instead of [source].
-    -s SOURCE_HOST, --source_host SOURCE_HOST
-                          Set source for newly required package (overwrite default source).
+    Available commands:
+        dump            Generate ./lib/autoload.lua file.
+        help            Show this message.
+        init            Create package.yaml in current working directory.
+        install         Alias for: stanley update && stanley dump
+        remove          Remove package from required list.
+        require         Add package to required list.
+        update          Clone or pull all required packages from remote sources.
 
-## Creating custom package
-1. Create package directory under __projects_root/lib/package_name__
-2. Create ```package.yaml``` file inside directory from previous step. Example file structure: [example.package.yaml](./example.package.yaml)
-3. ```./stanley require package_name -s local```
-4. Publish package (create git repo, push code)
-5. ```./stanley remove package_name -s local```
-6. ```./stanley require repo/package_name [-s full_source_path_if_other_than_github]```
+    Optional arguments:
+        --source  [string]      Set source for newly required package.
+                                Appended to every repository that does not have source specified.
+        --verbose [number]      Enable verbose mode (print debug messages).
+                                The higher the value, the deeper you dig.
+        --version [boolean]     Print current version and exit.
 
-## Additional features
-Generated "autoload.lua" file contains special function, that allows requiring files from directories that contains dot (.) in it's name.
+## Example usage scenarios
+```bash
+$ ./stanley init
+$ ./stanley require user/example_repo
+# require repo with the same name from another hosting source
+$ ./stanley require user/example_repo --source https://another_hosting.io/
+$ ./stanley update
+$ ./stanley dump
+```
 
-How? Each literal dot should be escaped with ``` ` ``` character, for example ```require('path.to`.file.containing`.dots')``` points to ```path/to.file/containing.dots```.
+```bash
+$ cp /some/example/package.yaml ./package.yaml
+$ ./stanley install # alias for: ./stanley update && ./stanley dump
+```
 
-## TODO
+### package.yaml structure explanation [here](./docs/package.yaml.md).
+
+# Additional features
+Generated __autoload.lua__ file contains additional functionalities. More about it __[here](./docs/autoload.lua.md)__.
+
+# Building from source
+
+## Requirements
+* __GNU Make__
+* __Lua__ at least 5.2.4
+
+```bash
+$ git clone https://github.com/Wolf2789/Stanley.git
+$ make
+```
+
+# TODO
 * Fix bugs if any
-* Add usage examples
+* Resolve recurrent package dependencies.
+* Add functionality for currently unused fields.
+

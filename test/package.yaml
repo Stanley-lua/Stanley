@@ -1,0 +1,10 @@
+name: Wolf2789/test
+description: Test package for Stanley
+version: 1
+author: 
+  - email: wolf2789@gmail.com
+    name: Dawid Bugajski
+require: 
+  - name: Wolf2789/switch
+    source: local
+  - name: vrld/hump

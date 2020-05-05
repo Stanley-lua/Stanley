@@ -1,0 +1,20 @@
+name: Wolf2789/Stanley
+description: Package manager for Lua.
+version: 1.1
+author: 
+  - email: wolf2789@gmail.com
+    name: Dawid Bugajski
+autoload:
+  - type: global
+    name: Stanley
+    path: src/Stanley.lua
+require:
+  - name: Wolf2789/CLI
+  - name: Wolf2789/counter
+  - name: Wolf2789/Debug
+  - name: Wolf2789/File
+  - name: Wolf2789/opairs
+  - name: Wolf2789/oscapture
+  - name: Wolf2789/spairs
+  - name: Wolf2789/switch
+  - name: Wolf2789/YAML

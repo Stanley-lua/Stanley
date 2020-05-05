@@ -1,0 +1,12 @@
+name: Wolf2789/Example_project
+description: Example Love2D project structure
+
+author:
+  email: wolf2789@gmail.com
+  name: Dawid Bugajski
+
+require:
+  - name: _CUSTOM_PACKAGE_/hump
+    source: local
+  - name: _CUSTOM_PACKAGE_/lume
+    source: local
