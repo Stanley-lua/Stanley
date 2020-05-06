@@ -1,4 +1,4 @@
-# Stanley
+# ![logo](docs/logo.png) Stanley
 Self-contained git-based local directory package manager for Lua.
 
 # Installation
