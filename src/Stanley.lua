@@ -184,6 +184,10 @@ return {
                 else
                     os.execute('cd ' .. target .. ' && ' .. git .. ' pull')
                 end
+                local config_file = target .. '/' .. self.config_file_name
+                if File.exists(config_file) then
+                    self:buildQueue( YAML.parse( File.get_lines(config_file) ) )
+                end
                 os.execute('sleep 2')
             end
         end
@@ -214,8 +218,7 @@ return {
             local name = package
             package = {
                 name = name,
-                source = CLI:getOption('source'),
-                target = CLI:getOption('target')
+                source = CLI:getOption('source')
             }
         end
         for index, queued in ipairs(self.packages) do
@@ -309,11 +312,14 @@ return {
     end,
 
     addToAutoload = function(self, item, package)
-        item.path = item.path:gsub('%.luac?$', '')
-        if item.relative ~= false then
-            item.path = package.name .. '/' .. item.path
+        local path = item.path:gsub('%.luac?$', '')
+        if package.name ~= self.config.name then
+            if item.relative ~= false then
+                path = package.name .. '/' .. path
+            end
+            path = 'lib/' .. path
         end
-        item.path = 'lib.' .. item.path:gsub('%.', '`.'):gsub('/', '.')
+        item.path = path:gsub('%.', '`.'):gsub('/', '.')
         if self:hasInAutoload(item) then return end
         debug(5, 'Adding to autoload', item)
         table.insert(self.autoload, item)
